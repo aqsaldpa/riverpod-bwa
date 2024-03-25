@@ -46,14 +46,18 @@ class _LiveGamesPagesState extends ConsumerState<LiveGamesPages> {
                 crossAxisCount: 2),
             itemBuilder: (context, index) {
               Game game = games[index];
-              return ExtendedImage.network(
-                game.thumbnail!,
-                fit: BoxFit.cover,
-              );
+              return itemImage(game);
             },
           );
         },
       ),
+    );
+  }
+
+  ExtendedImage itemImage(Game game) {
+    return ExtendedImage.network(
+      game.thumbnail!,
+      fit: BoxFit.cover,
     );
   }
 }
